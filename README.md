@@ -1,68 +1,91 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![logo](https://user-images.githubusercontent.com/9641348/66985105-7926fb00-f092-11e9-9b58-d8edac3690e2.png)
 
-## Available Scripts
 
-In the project directory, you can run:
+# Description
+AirCnC is an application developed during a JavaScript training course at [Rocketseat](https://rocketseat.com.br) :rocket:.
 
-### `yarn start`
+The concept of the application is composed by:
+  - A company providing spots in their office for individual developers
+  - An individual developer looking for mentoring, training, or even a job, can look up for companies using tech he is interested in
+  - The company can establish a cost per day or a free spot
+  - The user selects a date of preference
+  - The company admin can either approve or reject the user's request
+  - The user is notified about the company's evaluation
+  - Success \o/
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Technologies used during the training
+- [Backend](https://github.com/heronsilva/omnistack-backend):
+  - NodeJS
+  - Express
+  - MongoDB + Mongoose
+  - Socket.io
+- [Frontend](https://github.com/heronsilva/omnistack-frontend) & [Mobile](https://github.com/heronsilva/omnistack-mobile)
+  - ReactJS
+  - React Native + Expo
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+# Admin's web interface
 
-### `yarn test`
+Through the web interface, the admin can create new spots that will be available to the [mobile app](https://github.com/heronsilva/omnistack-mobile) users.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+## Login form
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+For simplicity, a password is not required at the moment.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+![login-form-admin](https://user-images.githubusercontent.com/9641348/66985103-7926fb00-f092-11e9-808f-1f35fbe5082f.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+## Dashboard
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+On the dashboard page the admin can see all the spots he has created.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![dashboard-admin](https://user-images.githubusercontent.com/9641348/66985101-788e6480-f092-11e9-8e2f-bda817dd5f0e.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## New spot creation
 
-## Learn More
+The required info upon the spot creation are:
+- A simple picture of the company's office environment
+- The company which will provide the spot
+- The technology stack
+- A cost per day. If not provided, it will be free of cost for the user.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![new-spot-form-admin](https://user-images.githubusercontent.com/9641348/66985106-79bf9180-f092-11e9-8454-200bfd8b6b1d.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## New booking request
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+When a mobile user fills a [booking request through the app](#booking-request), the admin will be notified through a real time websocket connection.
 
-### Analyzing the Bundle Size
+![request-booking-notification-admin](https://user-images.githubusercontent.com/9641348/66985108-79bf9180-f092-11e9-996c-1dd6ac64e74f.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
+# User's mobile app
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
+## Login form
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+The mobile app login requires the user's e-mail and the technology he would like to learn and work with.
 
-### Deployment
+<img src="https://user-images.githubusercontent.com/9641348/66985102-7926fb00-f092-11e9-9e24-8608868a49d6.png" alt="login-form-mobile" width="40%" />
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-### `yarn build` fails to minify
+## Spots
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+A list of companies that provide spots for the user's preferred technologies.
+
+<img src="https://user-images.githubusercontent.com/9641348/66985110-7a582800-f092-11e9-9e4c-b9d95a41cf74.png" alt="spot-list-mobile" width="40%" />
+
+
+## Booking request
+
+Once the user finds a nice opportunity, he can book a request with a date of preference.
+
+<img src="https://user-images.githubusercontent.com/9641348/66985107-79bf9180-f092-11e9-96fe-24ddc5f2d1e0.png" alt="booking-request-mobile" width="40%" />
+
+
+## Booking request approved
+
+If the admin approves the user's booking request, he will receive a real time notification.
+
+<img src="https://user-images.githubusercontent.com/9641348/66985100-788e6480-f092-11e9-9097-b38b55642c09.png" alt="booking-request-approved-mobile" width="40%" />
